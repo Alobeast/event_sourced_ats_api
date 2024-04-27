@@ -1,7 +1,10 @@
 class JobsController < ApplicationController
   def index
-    jobs = Job.all
+    jobs = Job.includes(:applications).all
 
-    render json: jobs.as_json
+    render json: jobs.as_json(
+      only: [:title, :hired_count, :rejected_count],
+      methods: [:status, :ongoing_application_count]
+    )
   end
 end

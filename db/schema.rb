@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_27_083951) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_27_155843) do
   create_table "application_events", force: :cascade do |t|
     t.integer "application_id", null: false
     t.string "type"
@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_27_083951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "last_event_type"
+    t.datetime "first_interview_date"
+    t.integer "note_count", default: 0
     t.index ["job_id"], name: "index_applications_on_job_id"
   end
 
@@ -45,6 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_27_083951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "last_event_type"
+    t.integer "hired_count", default: 0
+    t.integer "rejected_count", default: 0
+    t.integer "applications_count", default: 0
   end
 
   add_foreign_key "application_events", "applications"
