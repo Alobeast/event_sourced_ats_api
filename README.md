@@ -1,24 +1,10 @@
-# README
+# A Rails Applicant Tracking System API prototype
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Start the app locally
+1. Setup the application `bin/setup`
+2. Start the application `rails server`
+3. Access the app on your browser `http://localhost:3000/`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Available endpoints
+* `/applications` lists all applications for activated jobs
+* `/jobs` lists all acitvated and deactivated jobs

@@ -2,8 +2,7 @@ require 'test_helper'
 
 class JobsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    Job.destroy_all
-    load Rails.root.join("db/seeds.rb")
+    load Rails.root.join("db/test_seeds.rb")
   end
 
   test "should get index, response should be json" do
